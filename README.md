@@ -1,1 +1,0 @@
-# symentic-api
