@@ -2,12 +2,11 @@
   "name": "symentic-api",
   "version": "1.0.0",
   "description": "API server for Symentic DynamoDB data",
-  "main": "server.ts",
+  "main": "server-standalone.ts",
   "scripts": {
-    "dev": "nodemon --exec tsx server.ts",
-    "dev:standalone": "nodemon --exec tsx server-standalone.ts",
+    "dev": "nodemon --exec tsx server-standalone.ts",
     "build": "tsc",
-    "start": "node dist/server.js",
+    "start": "node dist/server-standalone.js",
     "start:standalone": "tsx server-standalone.ts"
   },
   "dependencies": {
@@ -15,7 +14,6 @@
     "cors": "^2.8.5",
     "@aws-sdk/client-dynamodb": "^3.848.0",
     "@aws-sdk/lib-dynamodb": "^3.856.0",
-    "aws-amplify": "^6.15.3",
     "dotenv": "^16.3.1"
   },
   "devDependencies": {

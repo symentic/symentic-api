@@ -1,0 +1,27 @@
+{
+  "ServiceName": "symentic-api",
+  "SourceConfiguration": {
+    "ImageRepository": {
+      "ImageIdentifier": "842733143746.dkr.ecr.us-east-1.amazonaws.com/symentic-api:latest",
+      "ImageConfiguration": {
+        "Port": "3001",
+        "RuntimeEnvironmentVariables": {
+          "NODE_ENV": "production",
+          "AWS_REGION": "us-east-1",
+          "DYNAMODB_TABLE_NAME": "SymenticProfileEngrams-prod",
+          "PORT": "3001"
+        }
+      },
+      "ImageRepositoryType": "ECR"
+    },
+    "AutoDeploymentsEnabled": false,
+    "AuthenticationConfiguration": {
+      "AccessRoleArn": "arn:aws:iam::842733143746:role/AppRunnerECRAccessRole"
+    }
+  },
+  "InstanceConfiguration": {
+    "Cpu": "0.25 vCPU",
+    "Memory": "0.5 GB",
+    "InstanceRoleArn": "arn:aws:iam::842733143746:role/AppRunnerInstanceRole"
+  }
+}

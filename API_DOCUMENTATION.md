@@ -1,7 +1,42 @@
 # Symentic Profiles API Documentation
 
 ## Overview
-This API provides access to the Symentic Engram Profiles stored in DynamoDB. It allows querying profiles by name, tags, and other attributes.
+This API provides comprehensive access to Symentic Engram Profiles stored in DynamoDB. It supports full CRUD operations, advanced querying, enrichments, and interaction tracking.
+
+## Data Structure
+
+### Profile Schema
+```typescript
+interface Profile {
+  // Core identifiers
+  businessId: string;
+  userId: string;
+  id?: string; // Generated: profile_{businessId}_{userId}
+  
+  // Basic profile information
+  name?: string;
+  email?: string;
+  role?: string;
+  description?: string;
+  userType?: 'internal' | 'external';
+  source?: string; // e.g., 'slack'
+  
+  // Arrays
+  tags?: string[];
+  expertise?: string[];
+  enrichments?: Enrichment[];
+  
+  // Complex objects
+  consent?: Consent;
+  slackProfile?: SlackProfile;
+  
+  // Metrics and timestamps
+  interactionCount?: number;
+  firstSeen?: string;
+  lastUpdated?: string;
+  lastInteraction?: string;
+}
+```
 
 ## Base URL
 ```

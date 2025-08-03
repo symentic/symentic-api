@@ -1,0 +1,15 @@
+{
+  "name": "symentic-api-gateway",
+  "description": "API Gateway proxy for Symentic API",
+  "target": "https://gjyptiwftw.us-east-1.awsapprunner.com",
+  "customDomain": "api.yourdomain.com",
+  "steps": [
+    "1. Create API Gateway REST API",
+    "2. Create {proxy+} resource with ANY method",
+    "3. Set integration to HTTP proxy",
+    "4. Deploy to stage (e.g., 'prod')",
+    "5. Create custom domain name",
+    "6. Create base path mapping",
+    "7. Update DNS to point to API Gateway"
+  ]
+}
